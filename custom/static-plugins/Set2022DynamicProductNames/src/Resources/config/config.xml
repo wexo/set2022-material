@@ -11,10 +11,5 @@
             <label lang="de-DE">Aktiviert</label>
         </input-field>
 
-        <input-field type="text">
-            <name>prefix</name>
-            <label>Product Prefix</label>
-            <label lang="de-DE">Produktpräfix</label>
-        </input-field>
     </card>
 </config>

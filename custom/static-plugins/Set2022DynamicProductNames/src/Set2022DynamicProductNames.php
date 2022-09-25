@@ -23,50 +23,7 @@ class Set2022DynamicProductNames extends Plugin
 
     public function install(InstallContext $installContext): void
     {
-        /** @var EntityRepository $customFieldSetRepository */
-        $customFieldSetRepository = $this->container->get("custom_field_set.repository");
-
-        $criteria = new Criteria();
-        $criteria->addFilter(new EqualsFilter("name", self::CUSTOM_FIELD_SET_NAME));
-        $exists = $customFieldSetRepository->searchIds($criteria, $installContext->getContext())->firstId();
-
-        if (!$exists) {
-            $customFieldSetRepository->create(
-                [
-                    [
-                        'name' => self::CUSTOM_FIELD_SET_NAME,
-                        'config' => [
-                            'label' => [
-                                'en-GB' => 'Product Prefix',
-                                'de-DE' => 'Produktpräfix'
-                            ]
-                        ],
-                        'relations' => [
-                            [
-                                'entityName' => 'product'
-                            ],
-                            [
-                                'entityName' => 'category'
-                            ]
-                        ],
-                        'customFields' => [
-                            [
-                                'name' => self::CUSTOM_FIELD_NAME,
-                                'type' => CustomFieldTypes::TEXT,
-                                'config' => [
-                                    'label' => [
-                                        'en-GB' => 'Prefix',
-                                        'de-DE' => 'Präfix'
-                                    ],
-                                    'customFieldType' => CustomFieldTypes::TEXT
-                                ],
-                            ]
-                        ]
-                    ]
-                ],
-                $installContext->getContext()
-            );
-        }
+        
     }
 
     public function update(UpdateContext $updateContext): void
@@ -85,24 +42,6 @@ class Set2022DynamicProductNames extends Plugin
 
     public function uninstall(UninstallContext $uninstallContext): void
     {
-        if ($uninstallContext->keepUserData()) {
-            return;
-        }
-        /** @var EntityRepository $customFieldSetRepository */
-        $customFieldSetRepository = $this->container->get("custom_field_set.repository");
-        $criteria = new Criteria();
-        $criteria->addFilter(new EqualsFilter("name", self::CUSTOM_FIELD_SET_NAME));
-        $customFieldSetId = $customFieldSetRepository->searchIds($criteria, $uninstallContext->getContext())->firstId();
-        if ($customFieldSetId) {
-            $customFieldSetRepository->delete(
-                [
-                    [
-                        'id' => $customFieldSetId
-                    ]
-                ],
-                $uninstallContext->getContext()
-            );
-        }
-        // TODO: Handle data removal.
+       
     }
 }

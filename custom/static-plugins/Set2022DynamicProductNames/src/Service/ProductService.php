@@ -11,42 +11,5 @@ use Set2022DynamicProductNames\Component\ProductPrefixEntity;
 
 class ProductService
 {
-    /**
-     * @param EntityRepository $productRepository
-     * @param MessageBusInterface $messageBus
-     */
-    public function __construct(
-        protected EntityRepository $productRepository,
-        protected MessageBusInterface $messageBus
-    ) {
-    }
-
-    /**
-     * @param string $action
-     * @param array|null $productNumbers
-     * @param bool $force
-     * @return bool
-     */
-    public function updateProductPrefixData(
-        string $action,
-        array|null $productNumbers,
-        bool $force
-    ): bool {
-        $criteria = new Criteria();
-
-        if ($productNumbers) {
-            $criteria->addFilter(new EqualsAnyFilter('productNumber', $productNumbers));
-        }
-
-        $productIds = $this->productRepository->searchIds($criteria, Context::createDefaultContext())->getIds();
-
-        foreach ($productIds as $productId) {
-            $productPrefix = new ProductPrefixEntity($productId, $action);
-            $productPrefix->setForce($force);
-
-            $this->messageBus->dispatch($productPrefix);
-        }
-
-        return true;
-    }
+    
 }
