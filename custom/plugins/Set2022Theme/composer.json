@@ -1,0 +1,18 @@
+{
+  "name": "set2022/theme",
+  "description": "Theme skeleton plugin",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Set2022Theme\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "Set2022Theme\\Set2022Theme",
+    "label": {
+      "de-DE": "Theme Set2022Theme plugin",
+      "en-GB": "Theme Set2022Theme plugin"
+    }
+  }
+}

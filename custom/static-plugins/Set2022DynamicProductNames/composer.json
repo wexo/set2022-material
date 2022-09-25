@@ -1,0 +1,38 @@
+{
+  "name": "set2022/dynamic-product-names",
+  "description": "Generate dynamic product names on your webshop",
+  "version": "1.0.0",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "SET Amsterdam 2022",
+      "homepage": "https://wexo.sharepoint.com/sites/SETAmsterdam2022"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Set2022DynamicProductNames\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "Set2022DynamicProductNames\\Set2022DynamicProductNames",
+    "plugin-icon": "src/Resources/config/plugin_icon.png",
+    "label": {
+      "de-DE": "Dynamische Produktnamen",
+      "en-GB": "Dynamic Product Names"
+    },
+    "description": {
+      "de-DE": "Generieren Sie dynamische Produktnamen in Ihrem Webshop",
+      "en-GB": "Generate dynamic product names on your webshop"
+    },
+    "manufacturerLink": {
+      "de-DE": "https://www.wexo.dk/",
+      "en-GB": "https://www.wexo.dk/"
+    },
+    "supportLink": {
+      "de-DE": "https://www.wexo.dk/shopware-support",
+      "en-GB": "https://www.wexo.dk/shopware-support"
+    }
+  }
+}
