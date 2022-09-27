@@ -1,0 +1,35 @@
+{% block wexo_product_label_media_form %}
+    <div class="wexo-product-label-media-form">
+        {% block wexo_product_label_media_form_upload %}
+            <sw-media-upload-v2
+                variant="regular"
+                :label="$tc('wexoProductLabels.detail.label.media')"
+                :source="productLabel.media"
+                :uploadTag="uploadTag"
+                :allowMultiSelect="false"
+                :caption="$tc('sw-cms.elements.general.config.caption.mediaUpload')"
+                @media-upload-sidebar-open="onOpenMediaModal"
+                @media-upload-remove-image="onImageRemove">
+            </sw-media-upload-v2>
+        {% endblock %}
+
+        {% block wexo_product_label_media_form_upload_listener %}
+            <sw-upload-listener
+                :uploadTag="uploadTag"
+                autoUpload
+                @media-upload-finish="onFileUpload">
+            </sw-upload-listener>
+        {% endblock %}
+
+        {% block wexo_product_label_media_form_modal %}
+            <sw-media-modal-v2
+                variant="regular"
+                v-if="mediaModalIsOpen"
+                :caption="$tc('sw-cms.elements.general.config.caption.mediaUpload')"
+                :allowMultiSelect="false"
+                @media-modal-selection-change="onSelectionChanges"
+                @modal-close="onCloseModal">
+            </sw-media-modal-v2>
+        {% endblock %}
+    </div>
+{% endblock %}

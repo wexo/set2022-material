@@ -1,0 +1,18 @@
+.custom-badge {
+    overflow: hidden;
+
+    &.rounded-circle {
+        box-sizing: border-box;
+    }
+
+    > img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &.has-height {
+        > img {
+            height: 100%;
+        }
+    }
+}

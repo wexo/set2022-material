@@ -1,0 +1,14 @@
+@import "~scss/variables";
+
+$sw-product-list-color-error: $color-crimson-500;
+$sw-product-list-color-success: $color-emerald-500;
+
+.wexo-product-label-list {
+    .is--inactive {
+        color: $sw-product-list-color-error;
+    }
+
+    .is--active {
+        color: $sw-product-list-color-success;
+    }
+}

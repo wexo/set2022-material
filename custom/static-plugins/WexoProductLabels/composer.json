@@ -1,0 +1,46 @@
+{
+    "name": "set2022/product-labels",
+    "description": "Create labels for your products",
+    "version": "3.1.9",
+    "type": "shopware-platform-plugin",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "The Awesome SET 2022 Team",
+            "homepage": "https://shopware.com/"
+        }
+    ],
+    "require": {
+        "shopware/core": "^6.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wexo\\ProductLabels\\": "src/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "Wexo\\ProductLabels\\WexoProductLabels",
+        "plugin-icon": "src/Resources/config/plugin.png",
+        "copyright": "(c) by SET 2022 Team",
+        "label": {
+            "da-DK": "Produkt mærkater",
+            "de-DE": "Produktetiketten",
+            "en-GB": "Product Labels"
+        },
+        "description": {
+            "da-DK": "Opret produkt mærkater til dine produkter",
+            "de-DE": "Erstellen Sie Etiketten für Ihre Produkte",
+            "en-GB": "Create labels for your products"
+        },
+        "manufacturerLink": {
+            "da-DK": "https://www.wexo.dk/",
+            "de-DE": "https://www.wexo.dk/",
+            "en-GB": "https://www.wexo.dk/"
+        },
+        "supportLink": {
+            "da-DK": "https://www.wexo.dk/shopware-support",
+            "de-DE": "https://www.wexo.dk/shopware-support",
+            "en-GB": "https://www.wexo.dk/shopware-support"
+        }
+    }
+}

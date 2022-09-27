@@ -1,0 +1,14 @@
+{% block wexo_product_label_type %}
+    <div class="wexo-product-label-type">
+        {% block wexo_product_label_type_selection %}
+            <sw-single-select
+                :label="$tc('wexoProductLabels.detail.label.typeSelect')"
+                :placeholder="$tc('wexoProductLabels.detail.placeholder.typeSelect')"
+                :options="labelTypes"
+                v-model="productLabel.type"
+                :error="productLabelTypeError"
+                required>
+            </sw-single-select>
+        {% endblock %}
+    </div>
+{% endblock %}

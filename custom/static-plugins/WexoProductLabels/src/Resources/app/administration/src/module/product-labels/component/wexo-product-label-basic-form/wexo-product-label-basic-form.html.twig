@@ -1,0 +1,135 @@
+{% block wexo_product_label_basic_form %}
+    <div class="wexo-product-label-basic-form">
+        {% block wexo_product_label_basic_form_name_active_container %}
+            <sw-container
+                class="wexo-product-label-basic-form__name-active-container"
+                columns="1fr minmax(auto, auto)"
+                gap="0px 20px">
+                {% block wexo_product_label_basic_form_name %}
+                    <sw-text-field
+                        class="wexo-product-label-basic-form__name"
+                        :error="productLabelNameError"
+                        :label="$tc('wexoProductLabels.basicForm.label.name')"
+                        :placeholder="$tc('wexoProductLabels.basicForm.placeholder.name')"
+                        v-model="productLabel.name"
+                        required
+                    ></sw-text-field>
+                {% endblock %}
+
+                {% block wexo_product_label_basic_form_active %}
+                    <sw-field
+                        class="wexo-product-label-basic-form__active"
+                        type="switch"
+                        v-model="productLabel.active"
+                        :label="$tc('wexoProductLabels.basicForm.label.active')">
+                    </sw-field>
+                {% endblock %}
+            </sw-container>
+        {% endblock %}
+
+        {% block wexo_product_label_basic_form_type %}
+            <wexo-product-label-type
+                class="wexo-product-label-basic-form__type">
+            </wexo-product-label-type>
+        {% endblock %}
+
+        {% block wexo_product_label_basic_form_position %}
+            <wexo-product-label-position
+                class="wexo-product-label-basic-form__position">
+            </wexo-product-label-position>
+        {% endblock %}
+
+        {% block wexo_product_label_basic_form_color %}
+            <sw-colorpicker
+                class="wexo-product-label-basic-form__color"
+                :label="$tc('wexoProductLabels.basicForm.label.color')"
+                :placeholder="$tc('wexoProductLabels.basicForm.placeholder.color')"
+                colorOutput="auto"
+                :alpha="true"
+                :disabled="false"
+                :colorLabels="true"
+                :zIndex="100"
+                v-model="productLabel.color">
+            </sw-colorpicker>
+        {% endblock %}
+
+        {% block wexo_product_label_basic_form_shape %}
+            <wexo-product-label-shape class="wexo-product-label-basic-form__shape">
+            </wexo-product-label-shape>
+        {% endblock %}
+
+        {% block wexo_product_label_basic_form_badge_only_container %}
+            <div v-if="isBadge"
+                 class="wexo-product-label-basic-form__badge-only-container">
+
+                {% block wexo_product_label_basic_form_badge_only_container_inner %}
+
+                    {% block wexo_product_label_basic_form_content %}
+                        <sw-text-field
+                            class="wexo-product-label-basic-form__content"
+                            :label="$tc('wexoProductLabels.basicForm.label.content')"
+                            :placeholder="$tc('wexoProductLabels.basicForm.placeholder.content')"
+                            v-model="productLabel.content">
+                        </sw-text-field>
+                    {% endblock %}
+
+                {% endblock %}
+
+            </div>
+        {% endblock %}
+
+        {% block wexo_product_label_basic_form_image_only_container %}
+            <div v-if="isImage"
+                 class="wexo-product-label-basic-form__image-only-container">
+
+                {% block wexo_product_label_basic_form_image_only_container_inner %}
+                    {% block wexo_product_label_basic_form_media %}
+                        <wexo-product-label-media-form class="wexo-product-label-basic-form__media-form">
+
+                        </wexo-product-label-media-form>
+                    {% endblock %}
+                {% endblock %}
+
+            </div>
+        {% endblock %}
+
+        {% block wexo_product_label_basic_form_custom_classes %}
+            <sw-text-field
+                class="wexo-product-label-basic-form__custom-classes"
+                :label="$tc('wexoProductLabels.basicForm.label.customClasses')"
+                :placeholder="$tc('wexoProductLabels.basicForm.placeholder.customClasses')"
+                v-model="productLabel.customClasses">
+            </sw-text-field>
+        {% endblock %}
+
+        {% block wexo_product_label_basic_form_height %}
+            <sw-text-field
+                class="wexo-product-label-basic-form__height"
+                :label="$tc('wexoProductLabels.basicForm.label.height')"
+                :placeholder="$tc('wexoProductLabels.basicForm.placeholder.height')"
+                v-model="productLabel.height">
+                <template #suffix>
+                    <span>px</span>
+                </template>
+            </sw-text-field>
+        {% endblock %}
+
+        {% block wexo_product_label_basic_form_width %}
+            <sw-text-field
+                class="wexo-product-label-basic-form__width"
+                :label="$tc('wexoProductLabels.basicForm.label.width')"
+                :placeholder="$tc('wexoProductLabels.basicForm.placeholder.width')"
+                v-model="productLabel.width">
+                <template #suffix>
+                    <span>px</span>
+                </template>
+            </sw-text-field>
+        {% endblock %}
+
+        {% block wexo_product_label_basic_form_margin_form %}
+            <wexo-product-label-margin-form class="wexo-product-label-basic-form__margin-form">
+
+            </wexo-product-label-margin-form>
+        {% endblock %}
+    </div>
+{% endblock %}

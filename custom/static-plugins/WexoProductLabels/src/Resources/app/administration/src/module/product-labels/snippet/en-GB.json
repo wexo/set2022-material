@@ -1,0 +1,94 @@
+{
+    "wexoProductLabels": {
+        "general": {
+            "mainMenuItemGeneral": "Custom Product Labels",
+            "descriptionTextModule": "Custom Product Labels",
+            "button": {
+                "save": "Save",
+                "cancel": "Cancel",
+                "goToCreate": "Create a new label",
+                "updateLabels": "Update labels"
+            }
+        },
+        "list": {
+            "column": {
+                "type": "Type",
+                "name": "Name",
+                "active": "Active"
+            }
+        },
+        "basicForm": {
+            "label": {
+                "name": "Name",
+                "active": "Active",
+                "color": "Color",
+                "content": "Content",
+                "customClasses": "Custom Classes",
+                "height": "Height",
+                "width": "Width"
+            },
+            "placeholder": {
+                "name": "Enter name...",
+                "color": "Enter color...",
+                "content": "Enter content...",
+                "customClasses": "Enter custom classes...",
+                "height": "Enter height...",
+                "width": "Enter width..."
+            }
+        },
+        "marginForm": {
+            "label": {
+                "margin": "Margin",
+                "marginTop": "Margin Top",
+                "marginRight": "Margin Right",
+                "marginBottom": "Margin Bottom",
+                "marginLeft": "Margin Left"
+            },
+            "placeholder": {
+                "marginTop": "Enter margin top...",
+                "marginRight": "Enter margin right...",
+                "marginBottom": "Enter margin bottom...",
+                "marginLeft": "Enter margin left..."
+            }
+        },
+        "detail": {
+            "label": {
+                "typeSelect": "Type",
+                "positionSelect": "Position",
+                "shapeSelect": "Shape",
+                "productStreamSelect": "Dynamic product groups",
+                "media": "Media",
+                "salesChannels": "Sales Channels"
+            },
+            "placeholder": {
+                "typeSelect": "Select type...",
+                "positionSelect": "Select position...",
+                "shapeSelect": "Select shape...",
+                "productStreamSelect": "Select dynamic product groups..."
+            }
+        },
+        "positions": {
+            "topLeft": "Top Left",
+            "topRight": "Top Right",
+            "bottomLeft": "Bottom Left",
+            "bottomRight": "Bottom Right",
+            "nextToText": "Next to text",
+            "center": "Center"
+        },
+        "shape": {
+            "normal": "Normal",
+            "round": "Round Edges",
+            "circle": "Circle"
+        },
+        "type": {
+            "badge": "Badge",
+            "image": "Image",
+            "discount": "Discount (percentage)"
+        }
+    },
+    "global": {
+        "entities": {
+            "custom_labels": "Product Label | Product Labels"
+        }
+    }
+}

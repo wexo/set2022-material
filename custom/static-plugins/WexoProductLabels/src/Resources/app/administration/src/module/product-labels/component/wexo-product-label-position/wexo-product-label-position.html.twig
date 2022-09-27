@@ -1,0 +1,14 @@
+{% block wexo_product_label_position %}
+    <div class="wexo-product-label-position">
+        {% block wexo_product_label_position_selection %}
+            <sw-single-select
+                :label="$tc('wexoProductLabels.detail.label.positionSelect')"
+                :placeholder="$tc('wexoProductLabels.detail.placeholder.positionSelect')"
+                :options="labelPositions"
+                v-model="productLabel.position"
+                :error="productLabelPositionError"
+                required>
+            </sw-single-select>
+        {% endblock %}
+    </div>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% sw_extends "@Storefront/storefront/component/product/card/badges.html.twig" %}
+
+{% block component_product_badges_discount %}{% endblock %}
+
+{% block component_product_badges_badge_element %}
+    {% set currentSalesChannelId = context.salesChannel.id %}
+    {% for customLabel in product.customFields.customLabels[badgePosition] %}
+        {% if context.salesChannel.id in customLabel.salesChannelIds or not customLabel.salesChannelIds %}
+
+            {% block component_product_badges_badge_element_loop %}
+                {% block component_product_badges_badge_element_discount_badge %}
+                    {% if customLabel.type == "discountPercentage" %}
+                        {% block component_product_badges_badge_element_discount_badge_inner %}
+                            {% sw_include '@Storefront/storefront/component/product-label/badge-discount.html.twig' %}
+                        {% endblock %}
+                    {% endif %}
+                {% endblock %}
+
+                {% block component_product_badges_badge_element_image_badge %}
+                    {% if customLabel.type == 'image' %}
+                        {% block component_product_badges_badge_element_image_badge_inner %}
+                            {% sw_include '@Storefront/storefront/component/product-label/badge-image.html.twig' %}
+                        {% endblock %}
+                    {% endif %}
+                {% endblock %}
+
+                {% block component_product_badges_badge_element_general_badge %}
+                    {% if customLabel.type == 'badge' %}
+                        {% block component_product_badges_badge_element_general_badge_inner %}
+                            {% sw_include '@Storefront/storefront/component/product-label/badge.html.twig' %}
+                        {% endblock %}
+                    {% endif %}
+                {% endblock %}
+
+            {% endblock %}
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+
+{% block component_product_badges_new %}
+    {{ parent() }}
+
+    {% block component_product_badges_top_left %}
+        {% set badgePosition = 'top-left' %}
+
+        {{ block('component_product_badges_badge_element') }}
+    {% endblock %}
+
+{% endblock %}
+
+{% block component_product_badges %}
+    {{ parent() }}
+
+    {% block component_product_badges_top_right %}
+        <div class="product-badges" style="left: unset; right: -1px;">
+            {% set badgePosition = 'top-right' %}
+
+            {{ block("component_product_badges_badge_element") }}
+
+        </div>
+    {% endblock %}
+
+    {% block component_product_badges_bottom_right %}
+        <div class="product-badges" style="left: unset; top: 30%; right: -1px;">
+            {% set badgePosition = 'bottom-right' %}
+
+            {{ block("component_product_badges_badge_element") }}
+
+        </div>
+    {% endblock %}
+
+    {% block component_product_badges_bottom_left %}
+        <div class="product-badges" style="top: 30%;">
+            {% set badgePosition = 'bottom-left' %}
+
+            {{ block("component_product_badges_badge_element") }}
+
+        </div>
+    {% endblock %}
+
+    {% block component_product_badges_center %}
+        <div class="product-badges"
+             style="top: 50%; left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); width: 100%; text-align:center;">
+            {% set badgePosition = 'center' %}
+
+            {{ block("component_product_badges_badge_element") }}
+
+        </div>
+    {% endblock %}
+
+{% endblock %}

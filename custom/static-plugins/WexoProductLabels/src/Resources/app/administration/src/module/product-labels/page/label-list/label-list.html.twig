@@ -1,0 +1,69 @@
+{% block wexo_product_label_list %}
+    <sw-page class="wexo-product-label-list">
+        {% block wexo_product_label_list_search_bar %}
+            <template #search-bar>
+                <sw-search-bar
+                    initial-search-type="custom_labels"
+                    :initial-search="term"
+                    @search="onSearch"
+                />
+            </template>
+        {% endblock %}
+
+        {% block wexo_product_label_actions %}
+            <template slot="smart-bar-actions">
+                {% block wexo_product_label_actions_update_labels %}
+                    <sw-button
+                        variant="primary"
+                        @click="updateLabels"
+                        :isLoading="updateLabelsLoading"
+                    >
+                        {{ $t('wexoProductLabels.general.button.updateLabels') }}
+                    </sw-button>
+                {% endblock %}
+
+                {% block wexo_product_label_actions_create_label %}
+                    <sw-button
+                        variant="primary"
+                        :router-link="{ name: 'wexo.product.label.create' }">
+                        {{ $t('wexoProductLabels.general.button.goToCreate') }}
+                    </sw-button>
+                {% endblock %}
+            </template>
+        {% endblock %}
+
+        {% block wexo_product_label_list_content %}
+            <div class="wexo-product-label-list__content" slot="content">
+                {% block wexo_product_label_list_grid %}
+                    <sw-entity-listing
+                        :items="productLabels"
+                        :repository="productLabelRepository"
+                        :is-loading="isLoading"
+                        :columns="productLabelColumns"
+                        allowInlineEdit
+                        allowColumnEdit
+                        detailRoute="wexo.product.labels.detail">
+                        {% block wexo_product_label_column_active %}
+                            <template #column-active="{ item, isInlineEdit }">
+                                {% block wexo_product_label_column_active_inline_edit %}
+                                    <template v-if="isInlineEdit">
+                                        <sw-checkbox-field v-model="item.active"></sw-checkbox-field>
+                                    </template>
+                                {% endblock %}
+
+                                {% block wexo_product_label_column_active_content %}
+                                    <template v-else>
+                                        <sw-icon v-if="item.active" name="small-default-checkmark-line-medium" small
+                                                 class="is--active"></sw-icon>
+                                        <sw-icon v-else name="small-default-x-line-medium" small
+                                                 class="is--inactive"></sw-icon>
+                                    </template>
+                                {% endblock %}
+                            </template>
+                        {% endblock %}
+                    </sw-entity-listing>
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </sw-page>
+{% endblock %}

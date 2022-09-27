@@ -1,0 +1,24 @@
+{% sw_extends '@Storefront/storefront/component/product-label/badge.html.twig' %}
+
+{% block component_product_label_badge %}
+    {% set normalPrice = product.calculatedPrice.unitPrice %}
+    {% set salePrice = product.calculatedPrices.first.unitPrice %}
+
+    {# If we have a listing price, the normal price on the product is actually the sale (discounted) price #}
+    {% if product.calculatedPrice.listPrice is defined and product.calculatedPrice.listPrice.price is defined %}
+        {% set salePrice = normalPrice %}
+        {% set normalPrice = product.calculatedPrice.listPrice.price %}
+    {% endif %}
+
+    {% set badgeContent = "" %}
+
+    {% if salePrice and (normalPrice !== salePrice) %}
+        {% set saleInAmount = normalPrice - salePrice %}
+        {% set badgeContent = ((saleInAmount / normalPrice) * 100)|round(0) %}
+    {% endif %}
+
+    {% if badgeContent %}
+        {% set badgeContent = '-'~badgeContent~'%' %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}

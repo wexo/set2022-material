@@ -1,0 +1,7 @@
+{% sw_extends '@Storefront/storefront/component/product-label/badge.html.twig' %}
+
+{% block component_product_label_badge_content %}
+    {% set media = customLabel.media ? customLabel.media.url : customLabel.imgUrl %}
+
+    <img src="{{ media }}"  alt="{{ customLabel.name }}" />
+{% endblock %}
