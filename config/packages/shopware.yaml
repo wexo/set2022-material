@@ -1,0 +1,10 @@
+shopware:
+    admin_worker:
+        enable_admin_worker: false
+    auto_update:
+        enabled: false
+    increment:
+        user_activity:
+            type: 'array'
+        message_queue:
+            type: 'array'
