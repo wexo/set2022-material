@@ -1,0 +1,12 @@
+{% block wexo_product_label_product_stream %}
+    <div class="wexo-product-label-product-stream">
+        {% block wexo_product_label_product_stream_selection %}
+            <sw-entity-multi-select
+                v-model="productLabel.productStreams"
+                class="wexo-product-label-product-stream__product-stream-select"
+                :label="$tc('wexoProductLabels.detail.label.productStreamSelect')"
+                :placeholder="$tc('wexoProductLabels.detail.placeholder.productStreamSelect')"
+            />
+        {% endblock %}
+    </div>
+{% endblock %}

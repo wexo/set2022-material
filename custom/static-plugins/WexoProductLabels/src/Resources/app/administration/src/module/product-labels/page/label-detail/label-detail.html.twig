@@ -1,0 +1,40 @@
+{% block wexo_product_label_detail %}
+    <sw-page class="wexo-product-label-detail">
+        {% block wexo_product_label_detail_actions %}
+            <template slot="smart-bar-actions">
+
+                {% block wexo_product_label_detail_actions_cancel %}
+                    <sw-button
+                        :disabled="isLoading"
+                        class="wexo-product-label-detail__cancel-action"
+                        @click="onCancel"
+                    >
+                        {{ $tc('wexoProductLabels.general.button.cancel') }}
+                    </sw-button>
+                {% endblock %}
+
+                {% block wexo_product_label_detail_actions_save %}
+                    <sw-button-process
+                        class="wexo-product-label-detail__save-action"
+                        :is-loading="isLoading"
+                        :process-success="isSaveSuccessful"
+                        variant="primary"
+                        :disabled="isLoading"
+                        @process-finish="saveFinish"
+                        @click.prevent="onSave"
+                    >
+                        {{ $tc('wexoProductLabels.general.button.save') }}
+                    </sw-button-process>
+                {% endblock %}
+            </template>
+        {% endblock %}
+
+        {% block wexo_product_label_detail_content %}
+            <sw-card-view slot="content">
+                {% block wexo_product_label_detail_content_view %}
+                    <router-view :isLoading="isLoading"/>
+                {% endblock %}
+            </sw-card-view>
+        {% endblock %}
+    </sw-page>
+{% endblock %}

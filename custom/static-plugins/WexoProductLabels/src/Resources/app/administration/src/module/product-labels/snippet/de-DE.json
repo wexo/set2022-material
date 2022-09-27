@@ -1,0 +1,74 @@
+{
+    "wexoProductLabels": {
+        "general": {
+            "mainMenuItemGeneral": "Custom Product Labels",
+            "descriptionTextModule": "Custom Product Labels",
+            "button": {
+                "save": "Save",
+                "cancel": "Cancel",
+                "goToCreate": "Create a new label",
+                "updateLabels": "Update labels"
+            }
+        },
+        "list": {
+            "column": {
+                "type": "Type",
+                "name": "Name",
+                "active": "Active"
+            }
+        },
+        "basicForm": {
+            "label": {
+                "name": "Name",
+                "active": "Active",
+                "color": "Color",
+                "content": "Content",
+                "customClasses": "Custom Classes"
+            },
+            "placeholder": {
+                "name": "Enter name...",
+                "color": "Enter color...",
+                "content": "Enter content...",
+                "customClasses": "Enter custom classes..."
+            }
+        },
+        "detail": {
+            "label": {
+                "typeSelect": "Type",
+                "positionSelect": "Position",
+                "shapeSelect": "Shape",
+                "productStreamSelect": "Dynamic product groups",
+                "media": "Media",
+                "salesChannels": "Sales Channels"
+            },
+            "placeholder": {
+                "typeSelect": "Select type...",
+                "positionSelect": "Select position...",
+                "shapeSelect": "Select shape...",
+                "productStreamSelect": "Select dynamic product groups..."
+            }
+        },
+        "positions": {
+            "topLeft": "Top Left",
+            "topRight": "Top Right",
+            "bottomLeft": "Bottom Left",
+            "bottomRight": "Bottom Right",
+            "nextToText": "Next to text",
+            "center": "Center"
+        },
+        "shape": {
+            "normal": "Normal",
+            "round": "Round Edges"
+        },
+        "type": {
+            "badge": "Badge",
+            "image": "Image",
+            "discount": "Discount (percentage)"
+        }
+    },
+    "global": {
+        "entities": {
+            "custom_labels": "Product Label | Product Labels"
+        }
+    }
+}

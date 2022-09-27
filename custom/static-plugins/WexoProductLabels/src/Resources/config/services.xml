@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="Wexo\ProductLabels\Core\Content\Label\LabelDefinition">
+            <tag name="shopware.entity.definition" entity="custom_labels"/>
+        </service>
+
+        <service id="Wexo\ProductLabels\Core\Content\LabelRuleRelation\LabelRuleRelationDefinition">
+            <tag name="shopware.entity.definition" entity="label_rule_relation"/>
+        </service>
+
+        <service id="Wexo\ProductLabels\Command\SetProductLabelsCommand">
+            <argument type="service" id="Wexo\ProductLabels\Service\ProductLabelsService"/>
+            <tag name="console.command"/>
+        </service>
+
+        <service id="Wexo\ProductLabels\Service\ProductLabelsService">
+            <argument type="service" id="product.repository"/>
+            <argument type="service" id="custom_labels.repository"/>
+            <argument type="service" id="label_rule_relation.repository"/>
+            <argument type="service" id="product_stream.repository"/>
+            <argument type="service" id="log_entry.repository" />
+            <argument type="service" id="Shopware\Core\Content\ProductStream\Service\ProductStreamBuilder"/>
+            <argument type="service" id="messenger.bus.shopware" />
+            <argument type="service" id="Shopware\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry" />
+        </service>
+
+        <service id="Wexo\ProductLabels\Component\MessageQueue\ProductLabelsHandler">
+            <argument type="service" id="product.repository" />
+            <argument type="service" id="log_entry.repository" />
+            <argument type="service" id="Shopware\Core\Framework\Api\Sync\SyncService"/>
+            <tag name="messenger.message_handler" />
+        </service>
+
+        <service id="Wexo\ProductLabels\Controller\LabelController" public="true">
+            <argument type="service" id="log_entry.repository" />
+            <argument type="service" id="Wexo\ProductLabels\Service\ProductLabelsService" />
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
+    </services>
+</container>

@@ -1,0 +1,74 @@
+{
+    "wexoProductLabels": {
+        "general": {
+            "mainMenuItemGeneral": "Brugerdefinerede produktetiketter",
+            "descriptionTextModule": "Brugerdefinerede produktetiketter",
+            "button": {
+                "save": "Gem",
+                "cancel": "Tilbage",
+                "goToCreate": "Opret nyt etiket",
+                "updateLabels": "Opdater etiketter"
+            }
+        },
+        "list": {
+            "column": {
+                "type": "Type",
+                "name": "Navn",
+                "active": "Aktiv"
+            }
+        },
+        "basicForm": {
+            "label": {
+                "name": "Navn",
+                "active": "Aktiv",
+                "color": "Farve",
+                "content": "Indhold",
+                "customClasses": "Brugerdefinerede klasser"
+            },
+            "placeholder": {
+                "name": "Indtast navn...",
+                "color": "Indtast farve...",
+                "content": "Indtast indhold...",
+                "customClasses": "Indtast brugerdefinerede klasser..."
+            }
+        },
+        "detail": {
+            "label": {
+                "typeSelect": "Type",
+                "positionSelect": "Position",
+                "shapeSelect": "Form",
+                "productStreamSelect": "Dynamiske produktgrupper",
+                "media": "Medie",
+                "salesChannels": "Sales Channels"
+            },
+            "placeholder": {
+                "typeSelect": "Vælg type...",
+                "positionSelect": "Vælg position...",
+                "shapeSelect": "Vælg form...",
+                "productStreamSelect": "Vælg dynamiske produktgrupper..."
+            }
+        },
+        "positions": {
+            "topLeft": "Øverst til venstre",
+            "topRight": "Øverst til højre",
+            "bottomLeft": "Nederst til venstre",
+            "bottomRight": "Nederst til højre",
+            "nextToText": "Ved siden af tekst",
+            "center": "Centrum"
+        },
+        "shape": {
+            "normal": "Normal",
+            "round": "Runde kanter"
+        },
+        "type": {
+            "badge": "Etiket",
+            "image": "Billede",
+            "discount": "Rabat (procent)"
+        }
+    },
+    "global": {
+        "entities": {
+            "custom_labels": "Produktetiket | Produktetiketter"
+        }
+    }
+}

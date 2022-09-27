@@ -1,0 +1,40 @@
+{% block component_product_label_badge %}
+    {% if not badgeContent %}
+        {% set badgeContent = customLabel.content %}
+    {% endif %}
+
+    {% set badgeMarginTop = customLabel.marginTop|default(0) %}
+    {% set badgeMarginRight = customLabel.marginRight|default(0) %}
+    {% set badgeMarginBottom = customLabel.marginBottom|default(0) %}
+    {% set badgeMarginLeft = customLabel.marginLeft|default(0) %}
+
+    {% if badgeMarginTop or badgeMarginRight or badgeMarginBottom or badgeMarginLeft %}
+        {% set badgeMargin = badgeMarginTop ~ " " ~ badgeMarginRight ~ " " ~ badgeMarginBottom ~ " " ~ badgeMarginLeft %}
+    {% endif %}
+
+    {% if not badgeHeight %}
+        {% set badgeHeight = customLabel.height %}
+    {% endif %}
+
+    {% if not badgeWidth %}
+        {% set badgeWidth = customLabel.width %}
+    {% endif %}
+
+    {% block component_product_label_badge_element %}
+        {% if context.salesChannel.id in customLabel.salesChannelIds or not customLabel.salesChannelIds %}
+        <div class="custom-badge badge badge-success badge-{{ badgePosition }}
+                {% if customLabel.shape == "round" %} rounded-pill{% endif %}
+                {% if customLabel.shape == "circle" %} rounded-circle{% endif %}
+                {% if badgeHeight %}has-height{% endif %}
+                {{ customLabel.customClasses }}"
+             style="background-color: {{ customLabel.color }};
+                 {% if badgeMargin %}margin:{{ badgeMargin }};{% endif %}
+                 {% if badgeHeight %}height:{{ badgeHeight }}px;{% endif %}
+                 {% if badgeWidth %}width:{{ badgeWidth }}px;{% endif %}">
+            {% block component_product_label_badge_content %}
+                {{ badgeContent }}
+            {% endblock %}
+        </div>
+    {% endif %}
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% block wexo_product_label_shape %}
+    <div class="wexo-product-label-shape">
+        {% block wexo_product_label_shape_selection %}
+            <sw-single-select
+                :label="$tc('wexoProductLabels.detail.label.shapeSelect')"
+                :placeholder="$tc('wexoProductLabels.detail.placeholder.shapeSelect')"
+                :options="shapes"
+                v-model="productLabel.shape">
+            </sw-single-select>
+        {% endblock %}
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+image: docker:latest
+
+stages:
+  - syntax
+
+before_script:
+  - source ci/prepare
+
+codesniffer:
+  stage: syntax
+  image: registry.services.wexo.dk:4567/wexo-services/docker-magento/shopware-plugins-quality-php:8.1-fpm
+  script:
+    - ~/phpcs.sh
+  allow_failure: false

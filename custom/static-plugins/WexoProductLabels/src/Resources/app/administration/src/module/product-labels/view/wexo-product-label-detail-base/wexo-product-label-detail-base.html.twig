@@ -1,0 +1,34 @@
+{% block wexo_product_label_detail_base %}
+    <div class="wexo-product-label-detail-base">
+
+        {% block wexo_product_label_detail_base_basic_form_card %}
+            <sw-card
+                class="wexo-product-label-detail-base__basic-form-card"
+                :is-loading="isLoading">
+
+                {% block wexo_product_label_detail_base_basic_form %}
+                    <wexo-product-label-basic-form
+                        v-if="!isLoading"
+                        class="wexo-product-label-detail-base__basic-form">
+                    </wexo-product-label-basic-form>
+                {% endblock %}
+
+            </sw-card>
+        {% endblock %}
+
+        {% block wexo_product_label_detail_base_condition_form_card %}
+            <sw-card
+                class="wexo-product-label-detail-base__condition-form-card"
+                :is-loading="isLoading">
+
+                {% block wexo_product_label_detail_base_condition_form %}
+                    <wexo-product-label-condition-form
+                        v-if="!isLoading"
+                        class="wexo-product-label-detail-base__condition-form">
+                    </wexo-product-label-condition-form>
+                {% endblock %}
+
+            </sw-card>
+        {% endblock %}
+    </div>
+{% endblock %}

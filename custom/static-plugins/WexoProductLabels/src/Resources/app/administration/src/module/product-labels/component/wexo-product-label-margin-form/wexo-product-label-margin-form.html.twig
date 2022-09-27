@@ -1,0 +1,50 @@
+{% block wexo_product_label_margin_form %}
+    <div class="wexo-product-label-margin-form">
+        {% block wexo_product_label_margin_form_margin_card %}
+            <sw-card
+                class="wexo-product-label-margin-form__margin-container"
+                :large="true"
+                :title="$tc('wexoProductLabels.marginForm.label.margin')">
+                {% block wexo_product_label_margin_form_margin_card_container %}
+                    <sw-container columns="1fr 1fr 1fr 1fr" gap="10px">
+                        {% block wexo_product_label_margin_form_margin_top %}
+                            <sw-text-field
+                                :label="$tc('wexoProductLabels.marginForm.label.marginTop')"
+                                :placeholder="$tc('wexoProductLabels.marginForm.placeholder.marginTop')"
+                                v-model="productLabel.marginTop">
+
+                            </sw-text-field>
+                        {% endblock %}
+
+                        {% block wexo_product_label_margin_form_margin_right %}
+                            <sw-text-field
+                                :label="$tc('wexoProductLabels.marginForm.label.marginRight')"
+                                :placeholder="$tc('wexoProductLabels.marginForm.placeholder.marginRight')"
+                                v-model="productLabel.marginRight">
+
+                            </sw-text-field>
+                        {% endblock %}
+
+                        {% block wexo_product_label_margin_form_margin_bottom %}
+                            <sw-text-field
+                                :label="$tc('wexoProductLabels.marginForm.label.marginBottom')"
+                                :placeholder="$tc('wexoProductLabels.marginForm.placeholder.marginBottom')"
+                                v-model="productLabel.marginBottom">
+
+                            </sw-text-field>
+                        {% endblock %}
+
+                        {% block wexo_product_label_margin_form_margin_left %}
+                            <sw-text-field
+                                :label="$tc('wexoProductLabels.marginForm.label.marginLeft')"
+                                :placeholder="$tc('wexoProductLabels.marginForm.placeholder.marginLeft')"
+                                v-model="productLabel.marginLeft">
+
+                            </sw-text-field>
+                        {% endblock %}
+                    </sw-container>
+                {% endblock %}
+            </sw-card>
+        {% endblock %}
+    </div>
+{% endblock %}

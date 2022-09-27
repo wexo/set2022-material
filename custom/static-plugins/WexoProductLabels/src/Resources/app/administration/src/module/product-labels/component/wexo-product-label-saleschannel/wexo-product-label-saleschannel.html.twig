@@ -1,0 +1,14 @@
+{% block wexo_product_label_saleschannel %}
+    <div class="wexo-product-label-sales-channel">
+        {% block wexo_product_label_saleschannel_selection %}
+            <sw-entity-multi-select
+                :label="$tc('wexoProductLabels.detail.label.salesChannels')"
+                :placeholder="$tc('wexoProductLabels.detail.label.salesChannels')"
+                entity="sales_channel"
+                :entityCollection="salesChannels"
+                class="wexo-product-label-sales-channel__sales-channel-select"
+                @change="setSalesChannelIds"
+            />
+        {% endblock %}
+    </div>
+{% endblock %}
