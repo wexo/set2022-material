@@ -36,6 +36,16 @@
             <tag name="messenger.message_handler" />
         </service>
 
+        <service id="Wexo\ProductLabels\ScheduledTask\UpdateProductLabelsTask">
+            <tag name="shopware.scheduled.task"/>
+        </service>
+
+        <service id="Wexo\ProductLabels\ScheduledTask\UpdateProductLabelsHandler">
+            <argument type="service" id="scheduled_task.repository"/>
+            <argument type="service" id="Wexo\ProductLabels\Service\ProductLabelsService" />
+            <tag name="messenger.message_handler"/>
+        </service>
+
         <service id="Wexo\ProductLabels\Controller\LabelController" public="true">
             <argument type="service" id="log_entry.repository" />
             <argument type="service" id="Wexo\ProductLabels\Service\ProductLabelsService" />

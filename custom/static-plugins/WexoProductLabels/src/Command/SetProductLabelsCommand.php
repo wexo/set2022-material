@@ -14,7 +14,6 @@ class SetProductLabelsCommand extends Command
     public static $defaultName = 'set2022:update-custom-labels';
 
     /**
-     * ImportProductsCommand constructor.
      * @param ProductLabelsService $productLabelsService
      */
     public function __construct(
