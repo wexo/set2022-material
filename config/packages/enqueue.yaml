@@ -1,0 +1,4 @@
+enqueue:
+    amqp:
+        transport: '%env(AMQP_URL)%'
+        client: ~

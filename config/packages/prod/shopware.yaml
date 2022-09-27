@@ -1,0 +1,3 @@
+shopware:
+    mail:
+        update_mail_variables_on_send: false

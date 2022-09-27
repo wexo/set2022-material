@@ -1,0 +1,10 @@
+monolog:
+    handlers:
+        main:
+            type: fingers_crossed
+            handler: nested
+            excluded_http_codes: [403, 404]
+            level: error
+            buffer_size: 30
+        business_event_handler_buffer:
+            level: error
